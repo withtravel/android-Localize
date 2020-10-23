@@ -6,7 +6,6 @@ import org.threeten.bp.ZoneId
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
-
 const val DEFAULT_INPUT_TIME_FORMATTER = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
 fun LocalDate.isPast(): Boolean {
