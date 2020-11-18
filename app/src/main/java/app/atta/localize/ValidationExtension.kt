@@ -12,11 +12,13 @@ fun String.isValidPhoneNumber(local: Locale): Boolean {
     return replaced.matches(Regex(getPhoneNumberPattern(local)))
 }
 
-fun String.isValidPostalCode(local: Locale): Boolean {
+// for now we support japan only
+fun String.isValidPostalCode(local: Locale = Locale.JAPAN): Boolean {
     return this.trim().matches(Regex(getPostalPattern(local)))
 }
 
-fun getPhoneNumberPattern(local: Locale): String {
+// for now we support japan only
+fun getPhoneNumberPattern(local: Locale = Locale.JAPAN): String {
     return when (local) {
         Locale.JAPAN, Locale.JAPANESE -> {
             "(\\+[0-9]+[\\- \\.]*)?[0-9]{10,13}\$"
