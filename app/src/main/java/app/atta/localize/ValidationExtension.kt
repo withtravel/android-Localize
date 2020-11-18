@@ -7,7 +7,7 @@ fun String.isValidEmail(): Boolean {
     return PatternsCompat.EMAIL_ADDRESS.matcher(this).matches()
 }
 
-fun String.isValidPhoneNumber(local: Locale): Boolean {
+fun String.isValidPhoneNumber(local: Locale = Locale.JAPAN): Boolean {
     val replaced = this.trim().replace("-", "")
     return replaced.matches(Regex(getPhoneNumberPattern(local)))
 }
