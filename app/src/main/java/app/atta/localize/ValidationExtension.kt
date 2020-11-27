@@ -21,10 +21,10 @@ fun String.isValidPostalCode(local: Locale = Locale.JAPAN): Boolean {
 fun getPhoneNumberPattern(local: Locale = Locale.JAPAN): String {
     return when (local) {
         Locale.JAPAN, Locale.JAPANESE -> {
-            "(\\+[0-9]+[\\- \\.]*)?[0-9]{10,13}\$"
+            "^0[7-9]0\\d{8}\$"
         }
         else -> {
-            ""
+            "(\\+[0-9]+[\\- \\.]*)?[0-9]{10,13}\$"
         }
     }
 
