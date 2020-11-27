@@ -35,16 +35,24 @@ class ValidationUnitTest {
         val input6 = "000010002"
         val input7 = "03-0001-0002"
         val input8 = "aaaa"
+        val input9 = "08000010004"
+        val input10 = "07000010004"
+        val input11 = "06000010004"
+        val input12 = "080000100040"
         val locale = Locale.JAPAN
 
         assertTrue(input1.isValidPhoneNumber(locale))
         assertTrue(input2.isValidPhoneNumber(locale))
-        assertTrue(input3.isValidPhoneNumber(locale))
-        assertTrue(input4.isValidPhoneNumber(locale))
+        assertFalse(input3.isValidPhoneNumber(locale))
+        assertFalse(input4.isValidPhoneNumber(locale))
         assertFalse(input5.isValidPhoneNumber(locale))
         assertFalse(input6.isValidPhoneNumber(locale))
-        assertTrue(input7.isValidPhoneNumber(locale))
+        assertFalse(input7.isValidPhoneNumber(locale))
         assertFalse(input8.isValidPhoneNumber(locale))
+        assertTrue(input9.isValidPhoneNumber(locale))
+        assertTrue(input10.isValidPhoneNumber(locale))
+        assertFalse(input11.isValidPhoneNumber(locale))
+        assertFalse(input12.isValidPhoneNumber(locale))
     }
 
     @Test
